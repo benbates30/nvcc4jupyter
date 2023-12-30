@@ -56,6 +56,7 @@ class NVCCPluginV2(Magics):
     @cell_magic
     def cuda(self, line='', cell=None):
         args = parse_argstring(self.cuda, line)
+        print(args)
         ex = args.name.split('.')[-1]
         if ex not in ['cu', 'h']:
             raise Exception('name must end with .cu or .h')
